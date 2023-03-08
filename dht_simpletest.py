@@ -45,14 +45,14 @@ try:
                 temperature_c = dhtDevice.temperature
                 temperature_f = round(temperature_c * (9 / 5) + 32,2)
                 humidity = dhtDevice.humidity
-                machine_1 = "P004"
+                machine_1 = "P001"
                 lou_time = pytz.timezone("America/New_York")
                 ft = "%Y-%m-%d %H:%M:%S"
                 time_in_lou = datetime.now(lou_time).strftime(ft)
                 insert_record(machine_1,str(time_in_lou),format(temperature_f,'.2f'),format(humidity,'.2f'))
-                time.sleep(.10)
+                time.sleep(5)
 
-except (IOError,TypeError) as e:
+except (IOError,TypeError,RuntimeError) as e:
     print("Exiting...")
 
 except KeyboardInterrupt:  
