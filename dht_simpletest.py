@@ -21,7 +21,7 @@ dhtDevice = adafruit_dht.DHT22(board.D4, use_pulseio=False)
 
 
 
-# Routine to insert temperature records into the pidata.temps table:
+# Routine to insert temperature records into the pidata.temps table::
 def insert_record( device, datetime, temp, hum ):
         sql = "INSERT INTO rpisenso (device, sensor_date,temp,hum) VALUES (%s, %s,%s,%s)"
         val = (machine_1,time_in_lou,temperature_f, humidity,)
