@@ -5,9 +5,7 @@
   <document-format-change-manifest>
     <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
-    <_.fcp.AskDataDashboardExtension.true...AskDataDashboardExtension />
     <AutoCreateAndUpdateDSDPhoneLayouts />
-    <Extensions />
     <ISO8601PeriodTypes />
     <_.fcp.MarkAnimation.true...MarkAnimation />
     <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
@@ -16,6 +14,7 @@
     <SetMembershipControl />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
   <preferences>
@@ -353,6 +352,13 @@
     <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
       <style />
       <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <datasources>
+        <datasource caption='rpisense (sensor)' name='federated.0s3ipvv1nazfgj19uir4b002zbth' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0s3ipvv1nazfgj19uir4b002zbth'>
+        <column-instance column='[sensor_date]' derivation='None' name='[none:sensor_date:qk]' pivot='key' type='quantitative' />
+        <column caption='Sensor Date' datatype='datetime' name='[sensor_date]' role='dimension' type='ordinal' />
+      </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
           <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
@@ -383,7 +389,7 @@
               </zone>
             </zone>
             <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
-              <zone fixed-size='172' h='22500' id='8' is-fixed='true' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' type-v2='color' w='16000' x='83200' y='1000'>
+              <zone fixed-size='190' h='24750' id='11' is-fixed='true' name='Sheet 4' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' type-v2='color' w='16000' x='83200' y='1000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -391,7 +397,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='2750' id='9' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[sum:humidity:qk]' type-v2='size' w='16000' x='83200' y='23500'>
+              <zone h='6375' id='17' name='Sheet 4' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:sensor_date:qk]' type-v2='filter' values='database' w='16000' x='83200' y='25750'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -399,26 +405,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone fixed-size='190' h='24750' id='11' is-fixed='true' name='Sheet 4' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' type-v2='color' w='16000' x='83200' y='26250'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone _.fcp.AskDataDashboardExtension.false...type-v2='text' _.fcp.AskDataDashboardExtension.true...param='[com.tableau.askdata].[2.267.0].[tableau:/extensions/ask-data-dashboard-extension/index.html]' _.fcp.AskDataDashboardExtension.true...type-v2='dashboard-object' forceUpdate='true' h='48000' id='17' w='16000' x='83200' y='51000'>
-                <_.fcp.AskDataDashboardExtension.false...formatted-text>
-                  <run fontalignment='1'>Ask Data removed when workbook was downgraded.
-</run>
-                  <run auto-url='true' fontalignment='1' hyperlink='tabdoc:load-url url=&amp;quot;https://tabsoft.co/extensionsupdown&amp;quot;'>Learn more</run>
-                </_.fcp.AskDataDashboardExtension.false...formatted-text>
-                <_.fcp.AskDataDashboardExtension.true...add-in add-in-id='com.tableau.askdata' extension-url='tableau:/extensions/ask-data-dashboard-extension/index.html' extension-version='2.267.0' instance-id='9F0222D2E1E64A4F883AA2BFC4A2EF90'>
-                  <instance-settings />
-                  <type-settings>
-                    <dashboard />
-                  </type-settings>
-                </_.fcp.AskDataDashboardExtension.true...add-in>
+              <zone h='2750' id='9' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[sum:humidity:qk]' type-v2='size' w='16000' x='83200' y='32125'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -435,6 +422,7 @@
             <format attr='margin' value='8' />
           </zone-style>
         </zone>
+        <zone fixed-size='172' h='9500' id='8' is-fixed='true' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' type-v2='color' w='14000' x='11600' y='78000' />
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
@@ -700,7 +688,7 @@
       </cards>
       <simple-id uuid='{34C22E0F-E070-427A-9F0C-0D2CA21AF507}' />
     </window>
-    <window class='dashboard' maximized='true' name='Dashboard 1'>
+    <window class='dashboard' name='Dashboard 1'>
       <viewpoints>
         <viewpoint name='Sheet 2' />
         <viewpoint name='Sheet 3'>
@@ -750,54 +738,10 @@
       <active id='3' />
       <simple-id uuid='{8B20D126-6E81-4B24-AC73-45093A5E34CD}' />
     </window>
-    <window class='dashboard' name='Story 1'>
+    <window class='dashboard' maximized='true' name='Story 1'>
       <viewpoints />
-      <active id='5' />
+      <active id='-1' />
       <simple-id uuid='{E14D78EC-AA25-41AB-B74D-F3025B2CDC31}' />
     </window>
   </windows>
-  <referenced-extensions>
-    <referenced-extension>
-      <manifest manifest-version='0.1'>
-        <dashboard-extension extension-version='2.267.0' id='com.tableau.askdata'>
-          <default-locale>en_US</default-locale>
-          <name resource-id='name' />
-          <description>Ask Data</description>
-          <author email='customerservice@tableau.com' name='Tableau' organization='Tableau' website='https://www.tableau.com' />
-          <min-api-version>1.7</min-api-version>
-          <source-location>
-            <_.fcp.AskDataDashboardExtension.true...url>tableau:/extensions/ask-data-dashboard-extension/index.html</_.fcp.AskDataDashboardExtension.true...url>
-            <_.fcp.AskDataDashboardExtension.false...url>https://tabsoft.co/extensionsupdown</_.fcp.AskDataDashboardExtension.false...url>
-          </source-location>
-          <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAlhJREFUOI2Nkt9vy1EYh5/3bbsvRSySCZbIxI+ZCKsN2TKtSFyIrV2WuRCJuBiJWxfuxCVXbvwFgiEtposgLFJElnbU1SxIZIIRJDKTrdu+53Uhra4mce7Oe57Pcz7JOULFisViwZ+29LAzOSjQYDgz1ZcCvWuXV11MJpN+OS/lm6179teqH0yDqxPTCyKSA8DcDsyOmOprnCaeP7459pdgy969i0LTC3IO/RQMyoHcQN+3cnljW3dNIFC47qDaK3g7BwdTkwBaBELT4ZPOUVWgKl4ZBnjxJPUlMDnTDrp0pmr6RHFeEjjcUUXPDGeSEwDN0Xg8sivxMhJNjGzbHd8PkM3eHRfkrBM5NkcQaY2vUnTlrDIA0NoaX+KLXFFlowr14tvVpqb2MICzmQcKqxvbumv+NAhZGCCIPwEw6QWXKYRL/VUXO0+rAUJiPwAk5MIlgVfwPjjHLCL1APmHN94ZdqeYN+NW/mn6I4BvwQYchcLnwFhJMDiYmlRxAzjpKWZkYkUCcZ2I61wi37tLbYyjiN0fHk5Oz3nGSLSzBbNHCF35R7f6K1/hN9PRhek11FrymfQQQKB4+Gl05P2qNRtmETlXW7e+b2z01dfycGNbfFMAbqNyKp9Jp4rzOT8RYFs0njJkc2iqsCObvTsOsDWWqA5C1uFy+Uz/oXJeKwVT4h0RmPUXhi79vuC0Ku6yOffTK3g9lfxfDQAisY516sg5kfOCiJk7HoLt2cf9b/9LANAc7dznm98PagG1fUOZ9IP5uMB8Q4CPoyNvausapkTt3rNMuvdf3C/o6+czhtdwmwAAAABJRU5ErkJggg==</icon>
-          <permissions>
-            <permission>full data</permission>
-          </permissions>
-          <context-menu>
-            <configure-context-menu-item />
-          </context-menu>
-        </dashboard-extension>
-        <_.fcp.AskDataDashboardExtension.true...resources>
-          <resource id='name'>
-            <text locale='de_DE'>Frag die Daten</text>
-            <text locale='en_GB'>Ask Data</text>
-            <text locale='en_US'>Ask Data</text>
-            <text locale='es_ES'>Pregunte a los datos</text>
-            <text locale='fr_CA'>Parlez aux données</text>
-            <text locale='fr_FR'>Parlez aux données</text>
-            <text locale='it_IT'>Chiedilo ai dati</text>
-            <text locale='ja_JP'>データに聞く</text>
-            <text locale='ko_KR'>데이터에 질문</text>
-            <text locale='pt_BR'>Pergunte aos dados</text>
-            <text locale='zh_CN'>&quot;数据问答&quot;功能</text>
-            <text locale='zh_TW'>資料問答</text>
-          </resource>
-        </_.fcp.AskDataDashboardExtension.true...resources>
-      </manifest>
-      <referenced-views>
-        <referenced-view instances='1' viewId='Dashboard 1' />
-        <referenced-view instances='1' viewId='Story 1' />
-      </referenced-views>
-    </referenced-extension>
-  </referenced-extensions>
 </workbook>
