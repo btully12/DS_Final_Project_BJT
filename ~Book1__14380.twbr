@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<!-- build 20222.22.0624.2136                               -->
-<workbook original-version='18.1' source-build='2022.2.0 (20222.22.0624.2136)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<!-- build 20231.23.0310.1044                               -->
+<workbook original-version='18.1' source-build='2023.1.0 (20231.23.0310.1044)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
     <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
@@ -14,7 +14,6 @@
     <SetMembershipControl />
     <SheetIdentifierTracking />
     <WindowsPersistSimpleIdentifiers />
-    <WorksheetBackgroundTransparency />
     <ZoneBackgroundTransparency />
   </document-format-change-manifest>
   <preferences>
@@ -156,32 +155,21 @@
             <column-instance column='[temp]' derivation='Avg' name='[avg:temp:qk]' pivot='key' type='quantitative' />
             <column caption='Device' datatype='string' name='[device]' role='dimension' type='nominal' />
             <column-instance column='[device]' derivation='None' name='[none:device:nk]' pivot='key' type='nominal' />
-            <column-instance column='[sensor_date]' derivation='None' name='[none:sensor_date:qk]' pivot='key' type='quantitative' />
-            <column caption='Sensor Date' datatype='datetime' name='[sensor_date]' role='dimension' type='ordinal' />
             <column caption='Temp' datatype='real' name='[temp]' role='measure' type='quantitative' />
           </datasource-dependencies>
-          <filter class='relative-date' column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:sensor_date:qk]' first-period='0' include-future='true' include-null='false' last-period='0' period-type-v2='day' />
-          <slices>
-            <column>[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:sensor_date:qk]</column>
-          </slices>
           <aggregation value='true' />
         </view>
-        <style>
-          <style-rule element='mark'>
-            <encoding attr='color' field='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' palette='tableau-map-temperatur' symmetric='false' type='interpolated' />
-          </style-rule>
-        </style>
+        <style />
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Square' />
+            <mark class='Circle' />
             <encodings>
-              <color column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' />
               <size column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' />
               <text column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' />
-              <text column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' />
+              <color column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' />
             </encodings>
             <style>
               <style-rule element='mark'>
@@ -213,14 +201,8 @@
             <column-instance column='[temp]' derivation='Avg' name='[avg:temp:qk]' pivot='key' type='quantitative' />
             <column caption='Device' datatype='string' name='[device]' role='dimension' type='nominal' />
             <column-instance column='[device]' derivation='None' name='[none:device:nk]' pivot='key' type='nominal' />
-            <column caption='Sensor Date' datatype='datetime' name='[sensor_date]' role='dimension' type='ordinal' />
             <column caption='Temp' datatype='real' name='[temp]' role='measure' type='quantitative' />
-            <column-instance column='[sensor_date]' derivation='Second-Trunc' name='[tsc:sensor_date:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='relative-date' column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[tsc:sensor_date:qk]' first-period='0' include-future='true' include-null='false' last-period='0' period-type-v2='minute' />
-          <slices>
-            <column>[federated.0s3ipvv1nazfgj19uir4b002zbth].[tsc:sensor_date:qk]</column>
-          </slices>
           <aggregation value='true' />
         </view>
         <style>
@@ -251,25 +233,23 @@
             <datasource caption='rpisense (sensor)' name='federated.0s3ipvv1nazfgj19uir4b002zbth' />
           </datasources>
           <datasource-dependencies datasource='federated.0s3ipvv1nazfgj19uir4b002zbth'>
-            <column-instance column='[humidity]' derivation='Avg' name='[avg:humidity:ok]' pivot='key' type='ordinal' />
             <column-instance column='[temp]' derivation='Avg' name='[avg:temp:ok]' pivot='key' type='ordinal' />
             <column-instance column='[temp]' derivation='Avg' name='[avg:temp:qk]' pivot='key' type='quantitative' />
             <column caption='Device' datatype='string' name='[device]' role='dimension' type='nominal' />
-            <column caption='Humidity' datatype='real' name='[humidity]' role='measure' type='quantitative' />
             <column-instance column='[device]' derivation='None' name='[none:device:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sensor_date]' derivation='None' name='[none:sensor_date:qk]' pivot='key' type='quantitative' />
             <column caption='Sensor Date' datatype='datetime' name='[sensor_date]' role='dimension' type='ordinal' />
             <column caption='Temp' datatype='real' name='[temp]' role='measure' type='quantitative' />
-            <column-instance column='[sensor_date]' derivation='Second-Trunc' name='[tsc:sensor_date:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='relative-date' column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[tsc:sensor_date:qk]' first-period='0' include-future='true' include-null='false' last-period='0' period-type-v2='minute' />
+          <filter class='relative-date' column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:sensor_date:qk]' first-period='0' include-future='true' include-null='false' last-period='0' period-type-v2='day' />
           <slices>
-            <column>[federated.0s3ipvv1nazfgj19uir4b002zbth].[tsc:sensor_date:qk]</column>
+            <column>[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:sensor_date:qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style>
           <style-rule element='mark'>
-            <encoding attr='color' field='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' palette='tableau-map-temperatur' symmetric='false' type='interpolated' />
+            <encoding attr='color' field='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' palette='tableau-map-temperatur' type='interpolated' />
           </style-rule>
         </style>
         <panes>
@@ -281,7 +261,6 @@
             <encodings>
               <color column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' />
               <size column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:ok]' />
-              <tooltip column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:humidity:ok]' />
               <text column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' />
               <text column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' />
             </encodings>
@@ -312,20 +291,22 @@
             <datasource caption='rpisense (sensor)' name='federated.0s3ipvv1nazfgj19uir4b002zbth' />
           </datasources>
           <datasource-dependencies datasource='federated.0s3ipvv1nazfgj19uir4b002zbth'>
-            <column-instance column='[humidity]' derivation='Avg' name='[avg:humidity:qk]' pivot='key' type='quantitative' />
             <column-instance column='[temp]' derivation='Avg' name='[avg:temp:qk]' pivot='key' type='quantitative' />
             <column caption='Device' datatype='string' name='[device]' role='dimension' type='nominal' />
             <column-instance column='[sensor_date]' derivation='Day' name='[dy:sensor_date:ok]' pivot='key' type='ordinal' />
-            <column caption='Humidity' datatype='real' name='[humidity]' role='measure' type='quantitative' />
             <column-instance column='[device]' derivation='None' name='[none:device:nk]' pivot='key' type='nominal' />
             <column-instance column='[sensor_date]' derivation='None' name='[none:sensor_date:qk]' pivot='key' type='quantitative' />
             <column caption='Sensor Date' datatype='datetime' name='[sensor_date]' role='dimension' type='ordinal' />
             <column caption='Temp' datatype='real' name='[temp]' role='measure' type='quantitative' />
-            <column-instance column='[sensor_date]' derivation='Minute-Trunc' name='[tmi:sensor_date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sensor_date]' derivation='Hour-Trunc' name='[thr:sensor_date:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
+          <filter class='categorical' column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[dy:sensor_date:ok]'>
+            <groupfilter function='level-members' level='[dy:sensor_date:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
           <filter class='relative-date' column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:sensor_date:qk]' first-period='0' include-future='true' include-null='false' last-period='0' period-type-v2='day' />
           <slices>
             <column>[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:sensor_date:qk]</column>
+            <column>[federated.0s3ipvv1nazfgj19uir4b002zbth].[dy:sensor_date:ok]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -338,12 +319,11 @@
             <mark class='Automatic' />
             <encodings>
               <color column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' />
-              <tooltip column='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:humidity:qk]' />
             </encodings>
           </pane>
         </panes>
         <rows>[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]</rows>
-        <cols>[federated.0s3ipvv1nazfgj19uir4b002zbth].[tmi:sensor_date:qk]</cols>
+        <cols>[federated.0s3ipvv1nazfgj19uir4b002zbth].[thr:sensor_date:qk]</cols>
       </table>
       <simple-id uuid='{1611CA1F-59F4-4A88-AD78-BDF5667F155A}' />
     </worksheet>
@@ -352,13 +332,6 @@
     <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Dashboard 1'>
       <style />
       <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
-      <datasources>
-        <datasource caption='rpisense (sensor)' name='federated.0s3ipvv1nazfgj19uir4b002zbth' />
-      </datasources>
-      <datasource-dependencies datasource='federated.0s3ipvv1nazfgj19uir4b002zbth'>
-        <column-instance column='[sensor_date]' derivation='None' name='[none:sensor_date:qk]' pivot='key' type='quantitative' />
-        <column caption='Sensor Date' datatype='datetime' name='[sensor_date]' role='dimension' type='ordinal' />
-      </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
           <zone h='98000' id='7' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
@@ -371,15 +344,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='49000' id='10' name='Sheet 4' w='41200' x='42000' y='1000'>
-                <zone-style>
-                  <format attr='border-color' value='#000000' />
-                  <format attr='border-style' value='none' />
-                  <format attr='border-width' value='0' />
-                  <format attr='margin' value='4' />
-                </zone-style>
-              </zone>
-              <zone h='49000' id='14' name='Sheet 2' w='41200' x='42000' y='50000'>
+              <zone h='98000' id='10' name='Sheet 4' w='41200' x='42000' y='1000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -389,7 +354,7 @@
               </zone>
             </zone>
             <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
-              <zone fixed-size='190' h='24750' id='11' is-fixed='true' name='Sheet 4' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' type-v2='color' w='16000' x='83200' y='1000'>
+              <zone h='8125' id='8' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' type-v2='color' w='16000' x='83200' y='1000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -397,7 +362,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='6375' id='17' name='Sheet 4' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:sensor_date:qk]' type-v2='filter' values='database' w='16000' x='83200' y='25750'>
+              <zone h='2750' id='9' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[sum:humidity:qk]' type-v2='size' w='16000' x='83200' y='9125'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -405,7 +370,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='2750' id='9' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[sum:humidity:qk]' type-v2='size' w='16000' x='83200' y='32125'>
+              <zone h='10750' id='11' name='Sheet 4' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' type-v2='color' w='16000' x='83200' y='11875'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -422,15 +387,14 @@
             <format attr='margin' value='8' />
           </zone-style>
         </zone>
-        <zone fixed-size='172' h='9500' id='8' is-fixed='true' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' type-v2='color' w='14000' x='11600' y='78000' />
       </zones>
       <devicelayouts>
         <devicelayout auto-generated='true' name='Phone'>
-          <size maxheight='1100' minheight='1100' sizing-mode='vscroll' />
+          <size maxheight='800' minheight='800' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='16' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98546' id='15' param='vert' type-v2='layout-flow' w='95734' x='2133' y='727'>
-                <zone fixed-size='280' h='26182' id='3' is-fixed='true' name='Sheet 3' w='95734' x='2133' y='727'>
+            <zone h='100000' id='13' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='12' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='98000' id='3' is-fixed='true' name='Sheet 3' w='41200' x='800' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -439,7 +403,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='5909' id='8' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' type-v2='color' w='95734' x='2133' y='26909'>
+                <zone h='8125' id='8' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' type-v2='color' w='16000' x='83200' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -448,7 +412,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='2000' id='9' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[sum:humidity:qk]' type-v2='size' w='95734' x='2133' y='32818'>
+                <zone h='2750' id='9' name='Sheet 3' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[sum:humidity:qk]' type-v2='size' w='16000' x='83200' y='9125'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -457,7 +421,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='26182' id='10' is-fixed='true' name='Sheet 4' w='95734' x='2133' y='34818'>
+                <zone fixed-size='280' h='98000' id='10' is-fixed='true' name='Sheet 4' w='41200' x='42000' y='1000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -466,16 +430,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='7818' id='11' name='Sheet 4' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' type-v2='color' w='95734' x='2133' y='61000'>
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone fixed-size='280' h='26182' id='14' is-fixed='true' name='Sheet 2' w='95734' x='2133' y='68818'>
+                <zone h='10750' id='11' name='Sheet 4' pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' type-v2='color' w='16000' x='83200' y='11875'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -521,7 +476,7 @@
               </zone>
             </zone>
             <zone fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
-              <zone h='25375' id='8' name='Sheet 4' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[dy:sensor_date:ok]' type-v2='filter' w='16000' x='83200' y='1000'>
+              <zone h='34875' id='8' name='Sheet 4' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[dy:sensor_date:ok]' type-v2='filter' w='16000' x='83200' y='1000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -576,66 +531,6 @@
       </devicelayouts>
       <simple-id uuid='{63117F32-024E-478E-A9F4-F5FE9575E33A}' />
     </dashboard>
-    <dashboard name='Story 1' type='storyboard'>
-      <style />
-      <size maxheight='964' maxwidth='1016' minheight='964' minwidth='1016' />
-      <zones>
-        <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98340' id='1' param='vert' removable='false' type-v2='layout-flow' w='98426' x='787' y='830'>
-            <zone h='3423' id='3' type-v2='title' w='98426' x='787' y='830' />
-            <zone h='10477' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98426' x='787' y='4253' />
-            <zone h='84440' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98426' x='787' y='14730'>
-              <flipboard active-id='1' nav-type='caption' show-nav-arrows='true'>
-                <story-points>
-                  <story-point captured-sheet='Dashboard 1' id='1'>
-                    <currentDeltas>
-                      <worksheet name='Sheet 4'>
-                        <selection-collection>
-                          <tuple-selection>
-                            <tuple-reference>
-                              <tuple-descriptor>
-                                <pane-descriptor>
-                                  <x-fields>
-                                    <field>[federated.0s3ipvv1nazfgj19uir4b002zbth].[tmi:sensor_date:qk]</field>
-                                  </x-fields>
-                                  <y-fields>
-                                    <field>[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]</field>
-                                  </y-fields>
-                                </pane-descriptor>
-                                <columns>
-                                  <field>[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:humidity:qk]</field>
-                                  <field>[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]</field>
-                                  <field>[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]</field>
-                                  <field>[federated.0s3ipvv1nazfgj19uir4b002zbth].[tmi:sensor_date:qk]</field>
-                                </columns>
-                              </tuple-descriptor>
-                              <tuple>
-                                <value>83.357575757575816</value>
-                                <value>64.220000000000013</value>
-                                <value>&quot;P002&quot;</value>
-                                <value>#2023-03-23 14:24:00#</value>
-                              </tuple>
-                            </tuple-reference>
-                          </tuple-selection>
-                        </selection-collection>
-                      </worksheet>
-                    </currentDeltas>
-                    <capturedDeltas />
-                  </story-point>
-                </story-points>
-              </flipboard>
-            </zone>
-          </zone>
-          <zone-style>
-            <format attr='border-color' value='#000000' />
-            <format attr='border-style' value='none' />
-            <format attr='border-width' value='0' />
-            <format attr='margin' value='8' />
-          </zone-style>
-        </zone>
-      </zones>
-      <simple-id uuid='{830A4363-78DD-44ED-A005-0DDCC55748EC}' />
-    </dashboard>
   </dashboards>
   <windows source-height='30'>
     <window class='worksheet' name='Sheet 1'>
@@ -660,7 +555,7 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[avg:temp:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0s3ipvv1nazfgj19uir4b002zbth].[none:device:nk]' type='color' />
           </strip>
         </edge>
       </cards>
@@ -722,19 +617,6 @@
       </cards>
       <simple-id uuid='{34C22E0F-E070-427A-9F0C-0D2CA21AF507}' />
     </window>
-    <window class='dashboard' name='Dashboard 1'>
-      <viewpoints>
-        <viewpoint name='Sheet 2' />
-        <viewpoint name='Sheet 3'>
-          <zoom type='entire-view' />
-        </viewpoint>
-        <viewpoint name='Sheet 4'>
-          <zoom type='entire-view' />
-        </viewpoint>
-      </viewpoints>
-      <active id='17' />
-      <simple-id uuid='{252895C6-5C8F-4AB1-B71B-2066211138E3}' />
-    </window>
     <window class='worksheet' name='Sheet 4'>
       <cards>
         <edge name='left'>
@@ -763,19 +645,26 @@
       </cards>
       <simple-id uuid='{7685FF5E-2D1B-41FF-8968-9CA5B69EF2A3}' />
     </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 3'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 4'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{252895C6-5C8F-4AB1-B71B-2066211138E3}' />
+    </window>
     <window class='dashboard' name='Dashboard 2'>
       <viewpoints>
         <viewpoint name='Sheet 4'>
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='3' />
+      <active id='8' />
       <simple-id uuid='{8B20D126-6E81-4B24-AC73-45093A5E34CD}' />
-    </window>
-    <window class='dashboard' maximized='true' name='Story 1'>
-      <viewpoints />
-      <active id='-1' />
-      <simple-id uuid='{E14D78EC-AA25-41AB-B74D-F3025B2CDC31}' />
     </window>
   </windows>
 </workbook>
